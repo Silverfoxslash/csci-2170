@@ -1,0 +1,61 @@
+#include <iostream>
+#include <stdio.h>
+#include <fstream>
+#include <cassert>
+#include <iomanip>
+using namespace std;
+void openFile(ifstream&)
+
+int main()
+{   int lowestInt, largestInt, fileCount=0, value;//declaring all the varibles
+    float fileTotal=0;
+    void openFile(ifstream&)
+
+    while(myIn >> value)
+    {
+        fileTotal += value;
+        
+        if (fileCount==0)// the largest and smallest is assigned to first number
+            {
+            largestInt=value;
+            lowestInt=value;    
+            }
+            
+        fileCount+=1;
+        
+        if( value > largestInt )//if larger or smaller assign to respective varible
+        {   
+            largestInt=value;
+        }
+        
+        if( value < lowestInt )
+        {   
+            lowestInt = value;
+        }
+        
+        cout << value << endl;
+    }
+        cout << endl << int(fileCount) << " total numbers" << endl;// print result of computations
+        cout << "The largest number is " << largestInt << " and the smallest is " << lowestInt << endl;
+        
+        cout << "The average of the numbers is " << fixed << setprecision(1) << (fileTotal/ fileCount) << endl;
+    
+    
+    
+    myIn.close();// close file
+    return 0;
+    
+}
+void openFile(ifstream&)
+{   string fileInput;
+    cout << "Which file would you like to open?";
+    cin >> fileInput
+    ifstream myIn;// opening file
+    myIn.open( fileInput.c_str());
+    if (!(myIn.is_open()))
+        {cout << "File not opened\n Aborting"
+         exit(0)
+        }
+    
+    
+}
